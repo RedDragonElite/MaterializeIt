@@ -1,0 +1,289 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+.icon-block {
+  padding: 0 0px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+/* Day & Night Stylesheet */
+/**
+ * WIP
+ */
+
+
+
+/* Animated Progressbar Stylesheet */
+/**
+ * WIP
+ */
+ 
+/* Experiene Bar */
+
+/* 
+SETTINGS
+If you need the loader go faster or slower, this is the place to change. Don't forget to update 'time' in the javascript
+*/
+@time: 10s;
+
+
+.loader-container {
+  height: 6px;
+  width: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -3px;
+  margin-left: -300px;
+  background-color: transparent;
+  
+background-image: -webkit-linear-gradient(left, rgb(91, 216, 255), rgb(255, 0, 0));
+	background-image: -moz-linear-gradient(left, rgb(91, 216, 255), rgb(255, 0, 0));
+	background-image: -o-linear-gradient(left, rgb(91, 216, 255), rgb(255, 0, 0));
+	background-image: -ms-linear-gradient(left, rgb(91, 216, 255), rgb(255, 0, 0));
+	background-image: linear-gradient(left, rgb(91, 216, 255), rgb(255, 0, 0));
+  box-shadow: inset 0 -2px 2px rgba(0,0,0,.4);
+  border-radius: 3px 0 0 3px;
+  &:after {
+    content: "";
+    display: block; 
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    margin-top: -0.5em;
+    margin-right: -1em;
+    background-image: -webkit-linear-gradient(top, rgb(0, 0, 0), rgb(33, 33, 33));
+	background-image: -moz-linear-gradient(top, rgb(0, 0, 0), rgb(33, 33, 33));
+	background-image: -o-linear-gradient(top, rgb(0, 0, 0), rgb(33, 33, 33));
+	background-image: -ms-linear-gradient(top, rgb(0, 0, 0), rgb(33, 33, 33));
+	background-image: linear-gradient(top, rgb(0, 0, 0), rgb(33, 33, 33));
+  }
+  &.done:after {
+    background: Red;
+  }
+}
+
+.run .runner {
+  content: "";
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 0%;
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(top, rgb(0, 0, 0), rgb(33, 33, 33));
+	background-image: -moz-linear-gradient(top, rgb(0, 0, 0), rgb(33, 33, 33));
+	background-image: -o-linear-gradient(top, rgb(0, 0, 0), rgb(33, 33, 33));
+	background-image: -ms-linear-gradient(top, rgb(0, 0, 0), rgb(33, 33, 33));
+	background-image: linear-gradient(top, rgb(0, 0, 0), rgb(33, 33, 33));
+  animation: loader @time linear;
+}
+.meter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2em;
+  margin-top: .3em;
+  color: #ff0000;
+  animation: meter @time linear;
+  text-shadow: 0 -1px 0 #333;
+  &:after {
+  	content: "%";
+  }
+}
+
+@keyframes loader {
+    0% { width:100% }
+    100% { width: 0%; }
+}
+
+@keyframes meter {
+  0% { color: rgb(91, 216, 255);}
+  100% { color: #ff0000; }
+}
+
+/* Decoration */
+@import url("https://fonts.googleapis.com/css?family=Give+You+Glory|Exo:800");
+
+html, body {
+	height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* User Taskbar */
+/**
+ * WIP
+ */
+
+.PlayerBar {
+  position: absolute;
+  bottom: 150px;
+  width: 10%;
+  height: 650px;
+  margin-left: 0;
+  margin-right: 0;
+  left: 0;
+  right: 0;
+  border-radius: 0px;
+  /* background: rgba(0, 0, 0, 0.9); */
+  z-index: 999;
+}
+
+.Icon {
+  width: 100%;
+  height: auto;
+  background: rgba(0, 0, 0, 0.0);
+  margin: 0px;
+  padding: 0px;
+  border-radius: 0px;
+  transition: all 0.15s ease-in-out;
+  border: 1px solid transparent;
+}
+
+.Icon:Hover {
+  background: rgba(66, 165, 245, 0.15);
+  border: 1px solid #90CAF9;
+  cursor: pointer;
+}
+
+.Icon:Active {
+  border: 1px solid #90CAF9;
+  background: rgba(66, 165, 245, 0.5);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.PlayerBarStart {
+  border-radius: 50px;
+  background: #fff;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 55px;
+  left: calc(90% - 20px);
+  transition: all 0.3s ease-in-out;
+}
+
+.PlayerBarStart:hover {
+  transform: scale(1.15);
+  cursor: pointer;
+}
+
+.ILabel {
+  width: 100%;
+  position: absolute;
+  top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 13px;
+  color: #fff;
+  text-shadow: 1px 0 0 rgba(0, 0, 0, 0.5), -1px 0 0 rgba(0, 0, 0, 0.5), 0 1px 0 rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(0, 0, 0, 0.5), 1px 1px rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(0, 0, 0, 0.5), 1px -1px 0 rgba(0, 0, 0, 0.5), -1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.LabelFolder {
+  height: 10px;
+  padding: 0em;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 13px;
+}
+
+ /* Custom Cards Stylesheet */
+/**
+ * WIP
+ */ 
+ 
+ .cardRounded{
+	width: 200px; /* ⬅ Size - Small (width: 200px), Medium (width: 225px), Large (width: 250px) */
+	overflow: hidden;
+	background-color: #FFFFFF;
+   
+	border-radius: 15px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	text-align: center;
+	-webkit-transition: .1s ease-in-out;
+	transition: .1s ease-in-out;
+}
+
+	.card:first-of-type{
+		margin-right: -20px;
+		margin-bottom: -25px;
+	}
+
+	.card:hover{
+		margin-top: -1px;
+	}
+
+.banner{
+	height: 70px;
+	width: 100%;
+	padding-top: 10px;
+	background-color: #252525;
+	background-size: cover;
+	background-position: center;
+}
+
+	.card:first-of-type .banner{
+		background-image: url("#");
+	}
+
+.avatar{
+	height: 80px;
+	width: 80px;
+	margin: auto;
+	background-size: cover;
+	background-position: center;
+	background-color: #F1F1F1;
+	border-radius: 100%;
+}
+ 
+ /* Progressbar Stylesheet */
+/**
+ * WIP
+ */
+ 
+ 
+
+  /* Location Modals Stylesheet */
+/**
+ * WIP
+ */
+ 
+ 
+ 
+/* PHONE Stylesheet */
+/**
+ * WIP
+ */
+ 
+ 
+ 
+/* Day & Night Stylesheet */
+/**
+ * WIP
+ */
+ 
+ 
